@@ -17,6 +17,12 @@
     <title>Wacky Widgets</title>
   </head>
   <body>
-    <h1>Widgets Yo</h1>
+    <h1>Wacky Widgets</h1>
+    <hr>
+    {% if widgets|length > 0 %}
+    {% else %}
+    <h3>No Widgets Exist</h3>
+    <hr>
+    {% endif %}
   </body>
 </html>
