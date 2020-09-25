@@ -7,10 +7,10 @@ from django.urls import reverse
 
 class Widget(models.Model):
     description = models.CharField(max_length=100),
-    quantity = models.IntegerField(max_length=5),
+    quantity = models.CharField(max_length=100),
 
-    # def __str__(self):
-    #     return self.description
+    def __str__(self):
+        return self.description
 
-    # def get_absolute_url():
-    #     return reverse('index')
+    def get_absolute_url():
+        return reverse('index')

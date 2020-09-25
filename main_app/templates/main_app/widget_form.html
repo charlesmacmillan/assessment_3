@@ -14,16 +14,17 @@
       type="image/png"
       href="https://www.pngitem.com/pimgs/m/0-4142_emoji-loco-transparent-background-crazy-emoji-png-png.png"
     />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Wacky Widgets</title>
   </head>
   <body>
-    <h1>Wacky Widgets</h1>
-    <hr>
-    {% if widgets|length > 0 %}
-    {% else %}
-    <h3>No Widgets Exist</h3>
-    <hr>
-    {% endif %}
-    <a href="{% url 'add_widget' %}">Add a Widget</a>
+    <h1>Add a Widget</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      <table>
+        {{ form.as_table }}
+      </table>
+      <input type="submit" value="Submit!" />
+    </form>
   </body>
 </html>
