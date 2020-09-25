@@ -18,11 +18,29 @@
   </head>
   <body>
     <h1>Wacky Widgets</h1>
-    <hr>
-    {% if widgets|length > 0 %}
+    <hr />
+
+    {% if widgets|length > 0 %} 
+      <table>
+        <thead>
+          <tr>
+            <th>Description:</th>
+            <th>Quantity:</th>
+          </tr>
+        </thead>
+    {% for widget in widgets %}
+      <tr>
+        <tbody>
+          <td>{{ widget.description }}</td>
+          <td>{{ widget.quantity }}</td>
+          <td><a style="color: red; text-decoration: none;" href="{% url 'delete' widget.id %}">X</a></td>
+        </tbody>
+      </tr>
+      {% endfor %} 
+    </table>
     {% else %}
     <h3>No Widgets Exist</h3>
-    <hr>
+    <hr />
     {% endif %}
     <a href="{% url 'add_widget' %}">Add a Widget</a>
   </body>

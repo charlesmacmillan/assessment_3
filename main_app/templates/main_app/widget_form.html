@@ -20,11 +20,15 @@
   <body>
     <h1>Add a Widget</h1>
     <form action="" method="post">
-      {% csrf_token %}
-      <table>
-        {{ form.as_table }}
-      </table>
-      <input type="submit" value="Submit!" />
+        {% csrf_token %}
+        <table>
+          {{ form.as_table }}
+          <label for="description">Description: </label>
+          <input type="text" name="description">
+          <label for="quantity">Quantity</label>
+          <input type="text" name="quantity">
+        </table>
+        <input type="submit" value="Submit!" />
     </form>
   </body>
 </html>

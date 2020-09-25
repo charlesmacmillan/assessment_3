@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 from .models import Widget
 
@@ -13,3 +13,6 @@ class WidgetCreate(CreateView):
     model = Widget
     fields = '__all__'
 
+def delete_widget(request, id):
+    Widget.objects.get(id=id).delete()
+    return redirect('index')
