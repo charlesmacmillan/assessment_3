@@ -23,6 +23,11 @@
       {% csrf_token %}
       <table>
         {{ form.as_table }}
+        <!-- <label for="description">Description: </label>
+        <input type="text" name="description" id="description" />
+        <br />
+        <label for="quantity">Quantity: &nbsp; &nbsp; &nbsp;</label>
+        <input type="text" name="quantity" id="description" /> -->
       </table>
       <input type="submit" value="Submit!" />
     </form>
